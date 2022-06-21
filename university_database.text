@@ -23,9 +23,9 @@ FROM courses
 WHERE courses.cfu > 10;
 
 3:
-SELECT *
-FROM students
-WHERE YEAR(date_of_birth) < 1992;
+SELECT `students`.`name`, `students`.`surname`, `students`.`date_of_birth`
+FROM `students`
+WHERE TIMESTAMPDIFF(YEAR, `students`.`date_of_birth`, CURDATE()) > 30
 
 4:
 SELECT *
